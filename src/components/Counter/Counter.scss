@@ -1,0 +1,12 @@
+.counter-container {
+  background-color: rgb(168, 168, 168);
+
+  .the-heading {
+    color: red;
+
+    &.green {
+      color: green;
+    }
+  }
+}
+
