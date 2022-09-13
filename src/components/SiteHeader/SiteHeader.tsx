@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { FaGithub, FaLinkedinIn, FaArrowRight } from 'react-icons/fa'
 
 import type { IconType } from 'react-icons'
@@ -31,8 +31,29 @@ const HoverableIcon = React.memo((props: HoverableIconProps) => {
 
 HoverableIcon.displayName = 'HoverableIcon'
 
+interface IconListItem {
+  IconComponent: IconType
+  hoverText: string
+  url: string
+}
+
+const iconList: IconListItem[] = [
+  {
+    IconComponent: FaGithub,
+    hoverText: 'github',
+    url: 'https://github.com/alex-a-pereira'
+  },
+  {
+    IconComponent: FaLinkedinIn,
+    hoverText: 'linkedin',
+    url: 'https://www.linkedin.com/in/alex-a-pereira/'
+  }
+]
+
 export const SiteHeader = React.memo(() => {
   const [hoverText, setHoverText] = useState('')
+
+  const resetHoverText = useCallback(() => { setHoverText('') }, [])
 
   return (
     <div className='container'>
@@ -43,30 +64,19 @@ export const SiteHeader = React.memo(() => {
       {/* icons and text that goes underneath */}
       <div className='icon-container'>
         <div className='icon-aligner'>
-          <HoverableIcon
-            IconComponent={FaGithub}
-            onMouseEnter={() => {
-              setHoverText('github')
-            }}
-            onMouseLeave={() => {
-              setHoverText('')
-            }}
-            onClick={() => {
-              window.open('https://github.com/alex-a-pereira', '_blank')
-            }}
-          />
-          <HoverableIcon
-            IconComponent={FaLinkedinIn}
-            onMouseEnter={() => {
-              setHoverText('linkedin')
-            }}
-            onMouseLeave={() => {
-              setHoverText('')
-            }}
-            onClick={() => {
-              window.open('https://www.linkedin.com/in/alex-a-pereira/', '_blank')
-            }}
-          />
+          {
+            iconList.map((iconProps, idx) => {
+              return (
+                <HoverableIcon
+                  key={idx}
+                  IconComponent={iconProps.IconComponent}
+                  onMouseEnter={() => { setHoverText(iconProps.hoverText) }}
+                  onMouseLeave={resetHoverText}
+                  onClick={() => { window.open(iconProps.url, '_blank') }}
+                />
+              )
+            })
+          }
         </div>
         <div className='hover-text-container'>
           {
