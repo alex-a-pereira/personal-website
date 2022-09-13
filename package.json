@@ -1,5 +1,5 @@
 {
-  "name": "react-ts-boilerplate",
+  "name": "alexpereira-dot-dev",
   "version": "0.0.1",
   "main": "index.js",
   "author": "Alex Pereira <alexapereira14@gmail.com>",
@@ -52,6 +52,7 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
+    "@fontsource/poppins": "^4.5.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6"

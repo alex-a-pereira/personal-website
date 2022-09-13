@@ -40,8 +40,16 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        test: /\.css|scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       },
       {
         test: /\.png|svg|jpg|gif$/,
