@@ -15,12 +15,52 @@
   font-weight: 300;
 }
 
+.hover-text {
+  font-weight: 300;
+}
+
 .icon-container {
   align-self: center;
 
-  .icon {
-    &:first-child {
-      margin-right: 36px;
+  .icon-aligner {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .icon-background {
+    margin-right: 24px;
+    
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    display: flex;
+    // padding: 12px;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: rgb(218, 218, 255);
+      cursor: pointer;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .icon {
+      display: inline-block;
     }
   }
 }
+
+.hover-text-container {
+  justify-content: flex-end;
+  display: flex;
+  height: 22px;
+  align-items: center;
+
+  .hover-text {
+    margin-right: 6px;
+  }
+}
+
