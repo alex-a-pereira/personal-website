@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 36px;
+  padding-top: 12px;
+}
+
+.heading-text {
+  font-weight: 600;
+}
+
+.sub-text {
+  font-weight: 300;
+}
+
+.icon-container {
+  align-self: center;
+
+  .icon {
+    &:first-child {
+      margin-right: 36px;
+    }
+  }
+}
