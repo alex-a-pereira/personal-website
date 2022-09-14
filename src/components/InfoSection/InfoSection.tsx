@@ -1,4 +1,7 @@
 import React from 'react'
+
+import { FlexibleLink } from '../FlexibleLink/FlexibleLink'
+
 import './InfoSection.scss'
 
 interface LinkConfig {
@@ -48,15 +51,9 @@ export const InfoSection = React.memo((props: InfoSectionProps) => {
                         {
                           infoPanel.links.map((linkConfig, idx) => {
                             return (
-                              <a
-                                key={idx}
-                                target='_blank'
-                                className='panel-link'
-                                href={linkConfig.url}
-                                rel='noreferrer'
-                              >
+                              <FlexibleLink key={idx} url={linkConfig.url}>
                                 {linkConfig.displayName}
-                              </a>
+                              </FlexibleLink>
                             )
                           })
                         }

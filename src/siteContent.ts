@@ -88,7 +88,13 @@ export const homeScreenData: InfoSectionProps[] = [
         paragraphs: [
           '"Volume-Synchronized Probability of Informed Trading" analysis performed on ~500GB of SP500 data.'
         ],
-        image: vpinLogo
+        image: vpinLogo,
+        links: [
+          {
+            displayName: 'Read more',
+            url: '/articles'
+          }
+        ]
       }
     ]
   },
