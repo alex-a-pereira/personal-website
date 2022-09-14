@@ -67,14 +67,26 @@ const screenData: InfoSectionProps[] = [
         paragraphs: [
           'Open-source node module to simplify sorting javascript objects by multiple properties.'
         ],
-        image: chainSortLogo
+        image: chainSortLogo,
+        links: [
+          {
+            displayName: 'View chainsort on npm',
+            url: 'https://www.npmjs.com/package/chainsort'
+          }
+        ]
       },
       {
         heading: 'Alternate Frequency Piano',
         paragraphs: [
           'Experimental piano-player for playing with atypical-frequency tunings.'
         ],
-        image: afPianoLogo
+        image: afPianoLogo,
+        links: [
+          {
+            displayName: 'Play the piano',
+            url: 'https://alternativepiano.com/'
+          }
+        ]
       },
       {
         heading: 'VPIN Big-Data Analysis',

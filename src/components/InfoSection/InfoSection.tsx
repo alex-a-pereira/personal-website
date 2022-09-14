@@ -44,23 +44,26 @@ export const InfoSection = React.memo((props: InfoSectionProps) => {
                   }
                   {
                     infoPanel.links != null && (
-                      infoPanel.links.map((linkConfig, idx) => {
-                        return (
-                          <a
-                            key={idx}
-                            target='_blank'
-                            className='panel-link'
-                            href={linkConfig.url}
-                            rel='noreferrer'
-                          >
-                            {linkConfig.displayName}
-                          </a>
-                        )
-                      })
+                      <div className='links-container'>
+                        {
+                          infoPanel.links.map((linkConfig, idx) => {
+                            return (
+                              <a
+                                key={idx}
+                                target='_blank'
+                                className='panel-link'
+                                href={linkConfig.url}
+                                rel='noreferrer'
+                              >
+                                {linkConfig.displayName}
+                              </a>
+                            )
+                          })
+                        }
+                      </div>
                     )
                   }
                 </div>
-
               </div>
             )
           })
