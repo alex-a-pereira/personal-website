@@ -9,7 +9,8 @@ module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   entry: './src/index.tsx',
   devServer: {
-    hot: true
+    hot: true,
+    historyApiFallback: true
   },
   target: 'web',
   output: {
