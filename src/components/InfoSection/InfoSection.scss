@@ -1,6 +1,7 @@
 .section-container {
   display: flex;
-  margin-top: 120px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 
   .title-container {
     flex: 2;
@@ -12,6 +13,11 @@
     .info-panel-container {
       display: flex;
       flex: 1;
+
+      margin-top: 48px;
+      &:first-child {
+        margin-top: 0;
+      }
 
       .img-container {
         flex: 2;
@@ -26,6 +32,17 @@
 
       .info-panel-text-container {
         flex: 8;
+      }
+
+      .panel-link {
+        text-decoration: underline;
+
+        color: black;
+
+        &:hover {
+          color: rebeccapurple;
+          cursor: pointer;
+        }
       }
     }
   }

@@ -1,6 +1,8 @@
 import React from 'react'
 // UI components
 import { InfoSection } from '../../components/InfoSection/InfoSection'
+// types
+import type { InfoSectionProps } from '../../components/InfoSection/InfoSection'
 // assets
 import mightierLogo from '../../assets/images/mightierLogo.png'
 import minimLogo from '../../assets/images/minim.png'
@@ -12,7 +14,7 @@ import umlLogo from '../../assets/images/uml.png'
 
 import './HomeScreen.scss'
 
-const screenData = [
+const screenData: InfoSectionProps[] = [
   {
     title: 'ABOUT',
     infoPanels: [
@@ -34,14 +36,26 @@ const screenData = [
         paragraphs: [
           'Senior full-stack software engineer. Mightier builds video games to help kids improve their mental and emotional health.'
         ],
-        image: mightierLogo
+        image: mightierLogo,
+        links: [
+          {
+            displayName: 'Learn more',
+            url: 'https://www.mightier.com/'
+          }
+        ]
       },
       {
         heading: 'Minim',
         paragraphs: [
           'Full-stack software engineer. Minim is an AI-driven WiFi management and IoT security platform for internet service providers.'
         ],
-        image: minimLogo
+        image: minimLogo,
+        links: [
+          {
+            displayName: 'Learn more',
+            url: 'https://www.minim.co/solutions/whole-home-wifi'
+          }
+        ]
       }
     ]
   },
@@ -98,10 +112,10 @@ export const HomeScreen = () => {
       {
         screenData.map((infoSection, idx) => {
           return (
-            <>
-              <hr />
+            <React.Fragment key={idx}>
+              {idx !== 0 && <hr />}
               <InfoSection key={idx} title={infoSection.title} infoPanels={infoSection.infoPanels} />
-            </>
+            </React.Fragment>
           )
         })
       }

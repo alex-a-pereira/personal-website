@@ -1,12 +1,19 @@
 import React from 'react'
 import './InfoSection.scss'
 
-interface InfoSectionProps {
+interface LinkConfig {
+  displayName: string
+  url: string
+}
+
+export interface InfoSectionProps {
   title: string
   infoPanels: Array<{
     heading: string,
     paragraphs: string[]
-    image: any | undefined
+    // TODO: figure out asset typing
+    image?: any
+    links?: LinkConfig[]
   }>
 }
 
@@ -31,10 +38,27 @@ export const InfoSection = React.memo((props: InfoSectionProps) => {
                 <div className='info-panel-text-container'>
                   <h2>{infoPanel.heading}</h2>
                   {
-                  infoPanel.paragraphs.map((paragraphText, idx) => {
-                    return <p key={idx}>{paragraphText}</p>
-                  })
-                }
+                    infoPanel.paragraphs.map((paragraphText, idx) => {
+                      return <p key={idx}>{paragraphText}</p>
+                    })
+                  }
+                  {
+                    infoPanel.links != null && (
+                      infoPanel.links.map((linkConfig, idx) => {
+                        return (
+                          <a
+                            key={idx}
+                            target='_blank'
+                            className='panel-link'
+                            href={linkConfig.url}
+                            rel='noreferrer'
+                          >
+                            {linkConfig.displayName}
+                          </a>
+                        )
+                      })
+                    )
+                  }
                 </div>
 
               </div>
