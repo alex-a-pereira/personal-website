@@ -32,6 +32,13 @@
 
       .info-panel-text-container {
         flex: 8;
+
+        p {
+          margin-top: 12px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
       }
 
       .links-container {

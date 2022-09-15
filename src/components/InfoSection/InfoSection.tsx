@@ -40,11 +40,13 @@ export const InfoSection = React.memo((props: InfoSectionProps) => {
                 )}
                 <div className='info-panel-text-container'>
                   <h2>{infoPanel.heading}</h2>
-                  {
-                    infoPanel.paragraphs.map((paragraphText, idx) => {
-                      return <p key={idx}>{paragraphText}</p>
-                    })
-                  }
+                  <div>
+                    {
+                      infoPanel.paragraphs.map((paragraphText, idx) => {
+                        return <p key={idx}>{paragraphText}</p>
+                      })
+                    }
+                  </div>
                   {
                     infoPanel.links != null && (
                       <div className='links-container'>
