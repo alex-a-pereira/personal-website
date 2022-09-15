@@ -1,8 +1,8 @@
 import React from 'react'
 
-import {
-  Link as ReactRouterLink
-} from 'react-router-dom'
+import { Link as ReactRouterLink } from 'react-router-dom'
+
+import './FlexibleLink.scss'
 
 // TODO: extend props for styling!
 interface FlexibleLinkProps {
@@ -10,14 +10,14 @@ interface FlexibleLinkProps {
   children: React.ReactNode
 }
 
-export const FlexibleLink = ({ children, url, ...props }: FlexibleLinkProps) => {
+export const FlexibleLink = ({ children, url }: FlexibleLinkProps) => {
   const isExternalLink = url.includes('http')
 
   if (isExternalLink) {
     return (
       <a
         target='_blank'
-        className='panel-link'
+        className='flexible-link'
         href={url}
         rel='noreferrer'
       >
@@ -27,13 +27,11 @@ export const FlexibleLink = ({ children, url, ...props }: FlexibleLinkProps) => 
   }
 
   return (
-    <div>
-      <ReactRouterLink
-        to={url}
-        {...props}
-      >
-        {children}
-      </ReactRouterLink>
-    </div>
+    <ReactRouterLink
+      to={url}
+      className='flexible-link'
+    >
+      {children}
+    </ReactRouterLink>
   )
 }

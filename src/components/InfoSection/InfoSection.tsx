@@ -53,9 +53,11 @@ export const InfoSection = React.memo((props: InfoSectionProps) => {
                         {
                           infoPanel.links.map((linkConfig, idx) => {
                             return (
-                              <FlexibleLink key={idx} url={linkConfig.url}>
-                                {linkConfig.displayName}
-                              </FlexibleLink>
+                              <div key={idx}>
+                                <FlexibleLink url={linkConfig.url}>
+                                  {linkConfig.displayName}
+                                </FlexibleLink>
+                              </div>
                             )
                           })
                         }

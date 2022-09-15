@@ -55,16 +55,6 @@ $vertical-layout-breakpoint: 800px;
 
       .links-container {
         margin-top: 12px;
-        
-        a {
-          text-decoration: underline;
-          color: black;
-  
-          &:hover {
-            color: rebeccapurple;
-            cursor: pointer;
-          }
-        }
       }
 
     }
