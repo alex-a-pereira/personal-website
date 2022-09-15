@@ -5,6 +5,8 @@ import { articles } from '../../siteContent'
 // UI
 import { ArticleScreenView } from './ArticleScreenView'
 
+import './ArticleScreen.scss'
+
 export const ArticleScreen = React.memo(() => {
   const { slug } = useParams()
 
