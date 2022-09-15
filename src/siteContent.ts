@@ -29,8 +29,8 @@ export const homeScreenData: InfoSectionProps[] = [
       {
         heading: 'Mightier',
         paragraphs: [
-          'Senior full-stack software engineer. Mightier builds video games to help kids improve their mental and emotional health.',
-          'I work with TypeScript, React-Native, Python/Django, and AWS Serverless Infrastructure to build complex systems.',
+          'Senior full-stack software engineer. Mightier builds video games to help kids improve their mental health and emotional regulation skills.',
+          'I work with TypeScript, React-Native, Python/Django, and AWS Serverless Infrastructure to build complex full-stack systems.',
           'I\'ve taken responsibility to lead many tech initiatives to implement tools that help our growing team work more efficiently and deliver higher-quality code to customers faster.'
         ],
         image: mightierLogo,
@@ -40,7 +40,7 @@ export const homeScreenData: InfoSectionProps[] = [
             url: '/articles/mightier-summary'
           },
           {
-            displayName: 'More about what Mightier does',
+            displayName: 'More about how Mightier helps families',
             url: 'https://www.mightier.com/'
           }
         ]
@@ -190,23 +190,26 @@ const mightierSummaryArticle: Article = {
     {
       paragraphs: [
         'As a senior full-stack engineer on a small team, I\'ve had the opportunity to work on a lot of cool projects.',
-        'My team is responsible delivering web and mobile app products to customers, as well as implementing tools to empower other teams across the company.'
+        'My team is responsible delivering web and mobile applications to customers, as well as implementing tools to empower other teams across the company.'
       ]
     },
     {
-      heading: 'Web and Mobile-App Products',
+      heading: 'Web and Mobile Applications',
       paragraphs: [
-        'Aute magna excepteur elit nostrud. Aute esse ut reprehenderit deserunt. Velit sunt est proident exercitation ut. Voluptate est est quis veniam mollit. Lorem ea consequat adipisicing laboris et laborum cupidatat commodo exercitation ex. Incididunt quis dolor minim in tempor et elit cupidatat Lorem est sit ex ea.'
+        'My team works closely with the product team to deliver applications for our customers.',
+        'I\'ve had the opportunity to lead architectural and deployment efforts on a few projects.'
       ],
       subSections: [
         {
-          heading: 'Mightier Parent App',
+          heading: 'Mightier Parent - a React Native mobile app',
           paragraphs: [
-            'Consectetur do fugiat anim laboris consectetur reprehenderit. Sint ipsum anim id nostrud aliquip veniam quis aliquip do mollit sit exercitation cupidatat. Magna id nostrud anim pariatur ea culpa quis officia officia officia.'
+            'Mightier Parent is a cross-platform mobile app for our customers to use to help track progress while using Mightier\'s game application. We built this using bare React Native as Expo was too limited for some of our use cases.',
+            'We\'ve given the product and content teams full control over what content is displayed in the app using a hosted CMS (Strapi).',
+            'Ive lead architectural decisions and refactor efforts to keep the codebase easy to navigate and improve turnaround time on new features.'
           ],
           links: [
             {
-              displayName: 'Learn more',
+              displayName: 'Learn more about Mightier Parent',
               url: 'https://www.mightier.com/parent-app/'
             }
           ]
@@ -220,9 +223,10 @@ const mightierSummaryArticle: Article = {
       ],
       subSections: [
         {
-          heading: 'Parent App TypeScript Migration',
+          heading: 'Mightier Parent - TypeScript migration',
           paragraphs: [
-            'Aute magna excepteur elit nostrud. Aute esse ut reprehenderit deserunt. Velit sunt est proident exercitation ut. Voluptate est est quis veniam mollit. Lorem ea consequat adipisicing laboris et laborum cupidatat commodo exercitation ex. Incididunt quis dolor minim in tempor et elit cupidatat Lorem est sit ex ea.'
+            'Mightier Parent originally had all of its React code written in vanilla JavaScript. We quickly recognized that the lack of typing was causing significant development overhead and leading to avoidable bugs.',
+            'I lead the effort to implement TypeScript transpilation and allow for a smooth transition from JS to TS.'
           ],
           links: [
             {
@@ -257,7 +261,16 @@ const mightierSummaryArticle: Article = {
 
 const typescriptMigrationArticle: Article = {
   title: 'Mightier Parent App TypeScript Migration',
-  slug: 'parent-app-typescript-migration'
+  slug: 'parent-app-typescript-migration',
+  sections: [
+    {
+      heading: 'Why did we need TypeScript?',
+      paragraphs: [
+        'When the codebase for Mightier Parent was created, the decision was made to use vanilla JavaScript for our React code. For a few months this decision felt alright - we were able get a proof-of-concept into testing and version 1.0 released to App Stores quickly without additional overhead.',
+        'However, we were rapidly added features to meet deadlines, and as the codebase grew quickly it became difficult to navigate. We were writing code with avoidable bugs, and it seemed like every component had a ton of unnecessary null-checks.'
+      ]
+    }
+  ]
 }
 
 export const articles = [
