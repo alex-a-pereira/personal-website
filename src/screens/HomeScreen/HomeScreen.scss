@@ -1,4 +1,11 @@
+$small-device-breakpoint: 800px;
+
 .screen-container {
   width: 80%;
   margin: auto;
+
+  @media (max-width: $small-device-breakpoint) {
+    // switch to verticle format on small devices (image on top of text rather than besides)
+    width: 90%;
+  }
 }

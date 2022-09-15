@@ -1,3 +1,5 @@
+$vertical-layout-breakpoint: 800px;
+
 .section-container {
   display: flex;
   margin-top: 60px;
@@ -14,9 +16,19 @@
       display: flex;
       flex: 1;
 
+      @media (max-width: $vertical-layout-breakpoint) {
+        // switch to verticle format on small devices (image on top of text rather than besides)
+        flex-direction: column;
+      }
+
       margin-top: 48px;
       &:first-child {
         margin-top: 0;
+
+        @media (max-width: $vertical-layout-breakpoint) {
+          // on small devices, we need extra space between "section title" and "first info panel"
+          margin-top: 24px;
+        }
       }
 
       .img-container {
@@ -57,4 +69,10 @@
 
     }
   }
+
+  @media (max-width: $vertical-layout-breakpoint) {
+    // switch to verticle format on small devices
+    flex-direction: column;
+  }
 }
+

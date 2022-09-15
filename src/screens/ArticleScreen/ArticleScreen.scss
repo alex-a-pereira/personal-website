@@ -1,6 +1,13 @@
+$small-device-breakpoint: 800px;
+
 .article-screen-container {
-  padding-left: 48px;
-  padding-right: 48px;
+  width: 80%;
+  margin: auto;
+
+  @media (max-width: $small-device-breakpoint) {
+    // switch to verticle format on small devices (image on top of text rather than besides)
+    width: 90%;
+  }
   margin-top: 24px;
 }
 
