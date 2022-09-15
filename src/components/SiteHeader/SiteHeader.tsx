@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { FaGithub, FaLinkedinIn, FaArrowRight } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 import type { IconType } from 'react-icons'
 
@@ -58,7 +59,9 @@ export const SiteHeader = React.memo(() => {
   return (
     <div className='container'>
       <div>
-        <h2 className='heading-text'>Alex Pereira</h2>
+        <h2 className='heading-text'>
+          <Link to='/'>Alex Pereira</Link>
+        </h2>
         <p className='sub-text'>Full-Stack Software Engineer</p>
       </div>
       {/* icons and text that goes underneath */}
