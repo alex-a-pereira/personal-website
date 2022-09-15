@@ -18,3 +18,21 @@ $small-device-breakpoint: 800px;
 .article-paragraph-container {
   margin-top: 12px;
 }
+
+.go-back-container {
+  display: flex;
+  align-items: center;
+  a {
+    padding: 0;
+    margin-left: 6px;
+    color: black;
+    &:hover {
+      color: rebeccapurple;
+      cursor: pointer;
+    }
+  }
+}
+
+.article-title {
+  margin-top: 12px;
+}

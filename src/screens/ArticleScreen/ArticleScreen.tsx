@@ -14,14 +14,6 @@ export const ArticleScreen = React.memo(() => {
     return articles.find(article => article.slug === slug)
   }, [slug])
 
-  if (!articleForScreen) {
-    return (
-      <div>
-        <h1>Not found!</h1>
-      </div>
-    )
-  }
-
   return (
     <ArticleScreenView articleContent={articleForScreen} />
   )
