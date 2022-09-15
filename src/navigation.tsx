@@ -8,7 +8,7 @@ export const AppNavigationContainer = React.memo(() => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/articles' element={<ArticleScreen />} />
+        <Route path='/articles/:slug' element={<ArticleScreen />} />
         <Route path='/' element={<HomeScreen />} />
       </Routes>
     </BrowserRouter>
