@@ -36,3 +36,17 @@ $small-device-breakpoint: 800px;
 .article-title {
   margin-top: 12px;
 }
+
+.article-sub-section {
+  h3 {
+    margin-top: 24px;
+  }
+
+  .article-subsection-paragraph {
+    margin-top: 12px;
+  }
+
+  .links-container {
+    margin-top: 12px;
+  }
+}

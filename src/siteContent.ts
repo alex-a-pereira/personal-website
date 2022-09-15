@@ -29,12 +29,18 @@ export const homeScreenData: InfoSectionProps[] = [
       {
         heading: 'Mightier',
         paragraphs: [
-          'Senior full-stack software engineer. Mightier builds video games to help kids improve their mental and emotional health.'
+          'Senior full-stack software engineer. Mightier builds video games to help kids improve their mental and emotional health.',
+          'I work with TypeScript, React-Native, Python/Django, and AWS Serverless Infrastructure to build complex systems.',
+          'I\'ve taken responsibility to lead many tech initiatives to implement tools that help our growing team work more efficiently and deliver higher-quality code to customers faster.'
         ],
         image: mightierLogo,
         links: [
           {
-            displayName: 'Learn more',
+            displayName: 'What I do at Mightier',
+            url: '/articles/mightier-summary'
+          },
+          {
+            displayName: 'More about what Mightier does',
             url: 'https://www.mightier.com/'
           }
         ]
@@ -119,9 +125,17 @@ export const homeScreenData: InfoSectionProps[] = [
   }
 ]
 
+interface ArticleSubSection {
+  heading?: string
+  paragraphs?: string[]
+  // TODO: better typing lol
+  links?: InfoSectionProps['infoPanels'][0]['links']
+}
+
 interface ArticleSection {
   heading?: string,
   paragraphs?: string[]
+  subSections?: ArticleSubSection[]
 }
 
 export interface Article {
@@ -169,6 +183,85 @@ const vpinArticleContent: Article = {
   ]
 }
 
+const mightierSummaryArticle: Article = {
+  title: 'My role at Mightier',
+  slug: 'mightier-summary',
+  sections: [
+    {
+      paragraphs: [
+        'As a senior full-stack engineer on a small team, I\'ve had the opportunity to work on a lot of cool projects.',
+        'My team is responsible delivering web and mobile app products to customers, as well as implementing tools to empower other teams across the company.'
+      ]
+    },
+    {
+      heading: 'Web and Mobile-App Products',
+      paragraphs: [
+        'Aute magna excepteur elit nostrud. Aute esse ut reprehenderit deserunt. Velit sunt est proident exercitation ut. Voluptate est est quis veniam mollit. Lorem ea consequat adipisicing laboris et laborum cupidatat commodo exercitation ex. Incididunt quis dolor minim in tempor et elit cupidatat Lorem est sit ex ea.'
+      ],
+      subSections: [
+        {
+          heading: 'Mightier Parent App',
+          paragraphs: [
+            'Consectetur do fugiat anim laboris consectetur reprehenderit. Sint ipsum anim id nostrud aliquip veniam quis aliquip do mollit sit exercitation cupidatat. Magna id nostrud anim pariatur ea culpa quis officia officia officia.'
+          ],
+          links: [
+            {
+              displayName: 'Learn more',
+              url: 'https://www.mightier.com/parent-app/'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      heading: 'Developer Experience Initiatives',
+      paragraphs: [
+        'I\'ve lead a number of initatives to help my team work better and deliver high-quality code to customers faster.'
+      ],
+      subSections: [
+        {
+          heading: 'Parent App TypeScript Migration',
+          paragraphs: [
+            'Aute magna excepteur elit nostrud. Aute esse ut reprehenderit deserunt. Velit sunt est proident exercitation ut. Voluptate est est quis veniam mollit. Lorem ea consequat adipisicing laboris et laborum cupidatat commodo exercitation ex. Incididunt quis dolor minim in tempor et elit cupidatat Lorem est sit ex ea.'
+          ],
+          links: [
+            {
+              displayName: 'Read more about how TypeScript helped our team',
+              url: '/articles/parent-app-typescript-migration'
+            }
+          ]
+        },
+        {
+          heading: 'Wranging Serverless Infrastructure using AWS CDK',
+          paragraphs: [
+            'Aute magna excepteur elit nostrud. Aute esse ut reprehenderit deserunt. Velit sunt est proident exercitation ut. Voluptate est est quis veniam mollit. Lorem ea consequat adipisicing laboris et laborum cupidatat commodo exercitation ex. Incididunt quis dolor minim in tempor et elit cupidatat Lorem est sit ex ea.',
+            'Consectetur do fugiat anim laboris consectetur reprehenderit. Sint ipsum anim id nostrud aliquip veniam quis aliquip do mollit sit exercitation cupidatat. Magna id nostrud anim pariatur ea culpa quis officia officia officia.'
+          ]
+        },
+        {
+          heading: 'React Native Over-The-Air Updates',
+          paragraphs: [
+            'Lorem Lorem ex qui officia veniam qui et sit velit tempor ipsum id et sit. Anim culpa minim reprehenderit incididunt ut ut elit quis adipisicing enim excepteur deserunt Lorem in. Veniam irure labore commodo est exercitation do magna dolor incididunt eiusmod nostrud. Nulla sunt dolor nisi enim occaecat consectetur minim eu anim ullamco id nulla est. Lorem nisi consequat adipisicing anim nisi id esse aute.'
+          ]
+        }
+      ]
+    },
+    {
+      heading: 'Cross-Team tools',
+      paragraphs: [
+        'We operate with the paradigm that customer-experience, product, marketing, and game developers should never rely on web-engineers to bring new content live, so we\'ve built many systems to support'
+      ]
+    }
+  ]
+}
+
+const typescriptMigrationArticle: Article = {
+  title: 'Mightier Parent App TypeScript Migration',
+  slug: 'parent-app-typescript-migration'
+}
+
 export const articles = [
-  vpinArticleContent
+  vpinArticleContent,
+  mightierSummaryArticle,
+  typescriptMigrationArticle
 ]
