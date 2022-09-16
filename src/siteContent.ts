@@ -236,10 +236,9 @@ const mightierSummaryArticle: Article = {
           ]
         },
         {
-          heading: 'Wranging Serverless Infrastructure using AWS CDK',
+          heading: 'Wranging serverless infrastructure using CloudFormation',
           paragraphs: [
-            'Aute magna excepteur elit nostrud. Aute esse ut reprehenderit deserunt. Velit sunt est proident exercitation ut. Voluptate est est quis veniam mollit. Lorem ea consequat adipisicing laboris et laborum cupidatat commodo exercitation ex. Incididunt quis dolor minim in tempor et elit cupidatat Lorem est sit ex ea.',
-            'Consectetur do fugiat anim laboris consectetur reprehenderit. Sint ipsum anim id nostrud aliquip veniam quis aliquip do mollit sit exercitation cupidatat. Magna id nostrud anim pariatur ea culpa quis officia officia officia.'
+            'We\'ve been implementing serverless infrastructure in order to reduce AWS costs and set ourselves up for success as we scale. However, the benefits of serverless come at a price - infrastructure changes were all in the web UI with no commit history or code review. It was difficult to find services, manage Lambda function code changes, and cleanly implement permissions.'
           ]
         },
         {
@@ -253,7 +252,22 @@ const mightierSummaryArticle: Article = {
     {
       heading: 'Cross-Team tools',
       paragraphs: [
-        'We operate with the paradigm that customer-experience, product, marketing, and game developers should never rely on web-engineers to bring new content live, so we\'ve built many systems to support'
+        'We operate with the paradigm that customer-experience, product, marketing, and game developers should never rely on web-engineers to bring new content live.'
+      ],
+      subSections: [
+        {
+          heading: 'Content Management System',
+          paragraphs: [
+            'I worked on a system to feed dynamic content to our web and mobile app clients so that content updates are decoupled from code changes.',
+            'We used Strapi, and open-source CMS, and served the content over CloudFront to ensure quick loading times to clients.'
+          ]
+        },
+        {
+          heading: 'Content Management System',
+          paragraphs: [
+            'I worked on a system to feed dynamic content to our web and mobile app clients so that content updates are decoupled from code changes.'
+          ]
+        }
       ]
     }
   ]
@@ -264,10 +278,16 @@ const typescriptMigrationArticle: Article = {
   slug: 'parent-app-typescript-migration',
   sections: [
     {
-      heading: 'Why did we need TypeScript?',
+      heading: 'Problem Statement',
       paragraphs: [
         'When the codebase for Mightier Parent was created, the decision was made to use vanilla JavaScript for our React code. For a few months this decision felt alright - we were able get a proof-of-concept into testing and version 1.0 released to App Stores quickly without additional overhead.',
-        'However, we were rapidly added features to meet deadlines, and as the codebase grew quickly it became difficult to navigate. We were writing code with avoidable bugs, and it seemed like every component had a ton of unnecessary null-checks.'
+        'We were rapidly added features to meet deadlines and as the codebase grew quickly it became difficult to navigate. We were writing code with avoidable bugs, and it seemed like every component had a ton of unnecessary null-checks.'
+      ]
+    },
+    {
+      heading: 'Vetting TypeScript',
+      paragraphs: [
+        'Our team had never worked with TypeScript before'
       ]
     }
   ]
