@@ -5,6 +5,8 @@ import gfm from 'remark-gfm'
 // syntax highlighting on codeblocks
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { cb as cbCodeStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+// UI components
+import { FlexibleLink } from '../FlexibleLink/FlexibleLink'
 // types
 import type { CodeComponent, CodeProps } from 'react-markdown/lib/ast-to-react'
 
@@ -33,7 +35,10 @@ export const MarkdownRenderer = React.memo(({ children }: MarkdownRendererProps)
     <ReactMarkdown
       remarkPlugins={[gfm]}
       components={{
-        code: CodeBlock
+        code: CodeBlock,
+        a: ({ children, href }) => {
+          return <FlexibleLink url={href as string}>{children}</FlexibleLink>
+        }
       }}
       className='markdown-renderer'
     >
