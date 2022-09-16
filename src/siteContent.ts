@@ -8,6 +8,8 @@ import afPianoLogo from './assets/images/af-piano.png'
 import vpinLogo from './assets/images/vpin.png'
 import nccLogo from './assets/images/ncc.png'
 import umlLogo from './assets/images/uml.png'
+// markdown articles
+import mightierSummaryArticle1 from './articles/mightierSummaryArticle.md'
 
 export const homeScreenData: InfoSectionProps[] = [
   {
@@ -298,3 +300,7 @@ export const articles = [
   mightierSummaryArticle,
   typescriptMigrationArticle
 ]
+
+export const slugToMarkdownMap: Record<string, string> = {
+  'mightier-summary': mightierSummaryArticle1
+}

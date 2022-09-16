@@ -25,6 +25,7 @@
     "@types/jest": "^28.1.1",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
+    "@types/react-syntax-highlighter": "^15.5.5",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "babel-loader": "^8.2.5",
@@ -58,6 +59,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-markdown": "^8.0.3",
-    "react-router-dom": "6"
+    "react-router-dom": "6",
+    "react-syntax-highlighter": "^15.5.0",
+    "remark-gfm": "^3.0.1"
   }
 }

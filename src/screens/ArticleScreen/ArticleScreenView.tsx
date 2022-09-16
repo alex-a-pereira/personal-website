@@ -1,16 +1,33 @@
 import React, { useCallback } from 'react'
+import ReactMarkdown from 'react-markdown'
+import gfm from 'remark-gfm'
 import { useNavigate, Link } from 'react-router-dom'
 import { FaArrowLeft } from 'react-icons/fa'
-import { FlexibleLink } from '../../components/FlexibleLink/FlexibleLink'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { cb as cbCodeStyle } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 // types
-import type { Article } from '../../siteContent'
+import type { CodeComponent, CodeProps } from 'react-markdown/lib/ast-to-react'
 
 interface ArticleScreenViewProps {
-  articleContent: Article | undefined
+  articleMarkdown: string | undefined
+}
+
+const CodeBlock: CodeComponent = ({ node, inline, className, children, ...props }: CodeProps) => {
+  const match = /language-(\w+)/.exec(className ?? '')
+
+  if (!match || inline) {
+    return <code className={className} {...props}>{children}</code>
+  }
+
+  return (
+    <SyntaxHighlighter language={match[1]} style={cbCodeStyle}>
+      {String(children).replace(/\n$/, '')}
+    </SyntaxHighlighter>
+  )
 }
 
 export const ArticleScreenView = React.memo((props: ArticleScreenViewProps) => {
-  const { articleContent } = props
+  const { articleMarkdown } = props
 
   const navigate = useNavigate()
 
@@ -18,7 +35,7 @@ export const ArticleScreenView = React.memo((props: ArticleScreenViewProps) => {
     navigate(-1)
   }, [navigate])
 
-  if (!articleContent) {
+  if (!articleMarkdown) {
     return (
       <div className='article-screen-container'>
         <h1>Not found!</h1>
@@ -33,56 +50,16 @@ export const ArticleScreenView = React.memo((props: ArticleScreenViewProps) => {
         <a onClick={onGoBackClick}>go back</a>
         <Link to='/' />
       </div>
-      <h1 className='article-title'>{articleContent.title}</h1>
-      {
-        articleContent.sections?.map((section, idx) => {
-          return (
-            <div key={idx} className='article-section-container'>
-              <h2>{section.heading}</h2>
-              {
-                section.paragraphs?.map((paragraph, idx) => {
-                  return (
-                    <p key={idx} className='article-paragraph-container'>
-                      {paragraph}
-                    </p>
-                  )
-                })
-              }
-              {
-                section.subSections?.map((subSection, idx) => {
-                  return (
-                    <div className='article-sub-section' key={idx}>
-                      {subSection.heading && <h3>{subSection.heading}</h3>}
-                      {
-                        subSection.paragraphs?.map((paragraph, idx) => {
-                          return (
-                            <p key={idx} className='article-subsection-paragraph'>
-                              {paragraph}
-                            </p>
-                          )
-                        })
-                      }
-                      {
-                        subSection.links != null && (
-                          <div className='links-container'>
-                            {subSection.links?.map((linkConfig, idx) => {
-                              return (
-                                <FlexibleLink key={idx} url={linkConfig.url}>
-                                  {linkConfig.displayName}
-                                </FlexibleLink>
-                              )
-                            })}
-                          </div>
-                        )
-                      }
-                    </div>
-                  )
-                })
-              }
-            </div>
-          )
-        })
-      }
+      <ReactMarkdown
+        remarkPlugins={[
+          gfm
+        ]}
+        components={{
+          code: CodeBlock
+        }}
+      >
+        {articleMarkdown}
+      </ReactMarkdown>
     </div>
   )
 })
