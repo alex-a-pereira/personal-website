@@ -20,6 +20,11 @@ for (let i = 1; i < 15; i++) {
 }
 ```
 
+
+
+
+
+
 `another-piece-of-code`
 
 We've given the product and content teams full control over what content is displayed in the app using a hosted CMS (Strapi).

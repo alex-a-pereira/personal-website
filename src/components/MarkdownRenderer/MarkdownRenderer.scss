@@ -1,0 +1,20 @@
+.markdown-renderer {
+  p {
+    margin-top: 8px;
+  }
+
+  h2, h3, h4 {
+    margin-top: 12px;
+  }
+
+  code {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid grey;
+    border-radius: 4px;
+
+    span {
+      font-family: Menlo, Monaco, "Courier New", monospace;
+    }
+  }
+}

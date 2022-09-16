@@ -8,6 +8,8 @@ import { cb as cbCodeStyle } from 'react-syntax-highlighter/dist/cjs/styles/pris
 // types
 import type { CodeComponent, CodeProps } from 'react-markdown/lib/ast-to-react'
 
+import './MarkdownRenderer.scss'
+
 const CodeBlock: CodeComponent = ({ node, inline, className, children, ...props }: CodeProps) => {
   const match = /language-(\w+)/.exec(className ?? '')
 
@@ -33,6 +35,7 @@ export const MarkdownRenderer = React.memo(({ children }: MarkdownRendererProps)
       components={{
         code: CodeBlock
       }}
+      className='markdown-renderer'
     >
       {children}
     </ReactMarkdown>
