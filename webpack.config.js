@@ -61,6 +61,10 @@ module.exports = {
         exclude: [
           /\.js$/
         ]
+      },
+      {
+        test: /\.md$/,
+        use: 'raw-loader'
       }
     ]
   }

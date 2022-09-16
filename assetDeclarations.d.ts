@@ -23,3 +23,9 @@ declare module '*.gif' {
   const value: any // eslint-disable-line @typescript-eslint/no-explicit-any
   export default value
 }
+
+// markdown files are rendered by something
+declare module '*.md' {
+  const value: string
+  export default value
+}

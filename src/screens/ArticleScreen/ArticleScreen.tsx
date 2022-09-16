@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { articles } from '../../siteContent'
 // UI
 import { ArticleScreenView } from './ArticleScreenView'
+import firstArticle from '../../articles/first.md'
 
 import './ArticleScreen.scss'
 
@@ -13,7 +14,7 @@ const markdown = 'Just a link: https://reactjs.com.'
 export const ArticleScreen = React.memo(() => {
   return (
     <ReactMarkdown>
-      {markdown}
+      {firstArticle}
     </ReactMarkdown>
   )
 
