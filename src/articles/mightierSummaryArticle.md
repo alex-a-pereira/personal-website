@@ -9,9 +9,8 @@ as implementing tools to empower other teams across the company.
 
 ##  Web and Mobile Applications
 
-My team works closely with the product team to deliver applications for our customers.
-
-I've had the opportunity to lead architectural and deployment efforts on a few projects.
+My team works closely with the product team to deliver applications for our customers. I've had
+the opportunity to lead architectural and deployment efforts on a few projects.
 
 ### Mightier Parent - a React Native mobile app
 
@@ -25,7 +24,7 @@ displayed in the app using a hosted CMS (Strapi).
 
 
 Ive lead architectural decisions and refactor efforts to keep the codebase easy 
-to navigate and improve ~turnaround~ time on new features.
+to navigate and improve turnaround time on new features.
 
 [Learn more about Mightier Parent](https://www.mightier.com/parent-app/)
 
@@ -49,16 +48,22 @@ transition from JS to TS.
 ### Wranging serverless infrastructure using CloudFormation
 
 We've been implementing serverless infrastructure in order to reduce AWS costs and
-set ourselves up for success as we scale. However, the benefits of serverless come
-at a price - infrastructure changes were all in the web UI with no commit history or code review. It was difficult to find services, manage Lambda function code changes, and cleanly implement permissions.
+set ourselves up for success as we scale. 
+
+However, the benefits of serverless came at a price - infrastructure changes were all in the web UI with no commit history or code review.
+It was difficult to find services, manage Lambda function code changes, and cleanly implement
+permissions.
+
+I advocated for and lead investigation efforts to explore tools like AWS CDK to make provisioning
+serverless infrastructure much easier.
 
 ### React Native Over-The-Air Updates
-Lorem Lorem ex qui officia veniam qui et sit velit tempor ipsum id et sit.
-Anim culpa minim reprehenderit incididunt ut ut elit quis adipisicing enim
-excepteur deserunt Lorem in. Veniam irure labore commodo est exercitation do
-magna dolor incididunt eiusmod nostrud. Nulla sunt dolor nisi enim occaecat
-consectetur minim eu anim ullamco id nulla est. Lorem nisi consequat
-adipisicing anim nisi id esse aute.
+Before releasing Mightier Parent, my team had only ever provided a web-interface for our customers.
+Other teams were accustomed to the immediately deployment that the web provides, but the App-Store review
+process meant that even small changes would take at least a day to make it to customers.
+
+I investigated and lead the implementation for using [CodePush](https://github.com/microsoft/react-native-code-push) in our
+application.
 
 ---
 
@@ -70,5 +75,5 @@ game developers should never rely on web-engineers to bring new content live.
 I worked on a system to feed dynamic content to our web and mobile app clients so
 that content updates are decoupled from code changes.
 
-We used Strapi, and open-source CMS, and served the content over CloudFront to
-ensure quick loading times to clients.
+We used [Strapi](https://strapi.io/), an open-source headless CMS, to allow other teams to fully manage content.
+We served the assets over CloudFront to ensure quick loading times to clients.
