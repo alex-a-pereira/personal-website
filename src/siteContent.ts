@@ -11,6 +11,7 @@ import umlLogo from './assets/images/uml.png'
 // markdown articles
 import mightierSummaryArticle1 from './articles/mightierSummaryArticle.md'
 import vpinArticle from './articles/vpin.md'
+import typescriptArticle from './articles/parentAppTS.md'
 
 export const homeScreenData: InfoSectionProps[] = [
   {
@@ -237,32 +238,12 @@ const mightierSummaryArticle: Article = {
   ]
 }
 
-const typescriptMigrationArticle: Article = {
-  title: 'Mightier Parent App TypeScript Migration',
-  slug: 'parent-app-typescript-migration',
-  sections: [
-    {
-      heading: 'Problem Statement',
-      paragraphs: [
-        'When the codebase for Mightier Parent was created, the decision was made to use vanilla JavaScript for our React code. For a few months this decision felt alright - we were able get a proof-of-concept into testing and version 1.0 released to App Stores quickly without additional overhead.',
-        'We were rapidly added features to meet deadlines and as the codebase grew quickly it became difficult to navigate. We were writing code with avoidable bugs, and it seemed like every component had a ton of unnecessary null-checks.'
-      ]
-    },
-    {
-      heading: 'Vetting TypeScript',
-      paragraphs: [
-        'Our team had never worked with TypeScript before'
-      ]
-    }
-  ]
-}
-
 export const articles = [
-  mightierSummaryArticle,
-  typescriptMigrationArticle
+  mightierSummaryArticle
 ]
 
 export const slugToMarkdownMap: Record<string, string> = {
   'mightier-summary': mightierSummaryArticle1,
-  VPIN: vpinArticle
+  VPIN: vpinArticle,
+  'parent-app-typescript-migration': typescriptArticle
 }

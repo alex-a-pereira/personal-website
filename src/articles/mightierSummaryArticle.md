@@ -21,12 +21,6 @@ for (let i = 1; i < 15; i++) {
 ```
 
 
-
-
-
-
-`another-piece-of-code`
-
 We've given the product and content teams full control over what content is displayed in the app using a hosted CMS (Strapi).
 
 - item 1
@@ -35,7 +29,7 @@ We've given the product and content teams full control over what content is disp
 
 Ive lead architectural decisions and refactor efforts to keep the codebase easy to navigate and improve ~turnaround~ time on new features.
 
-[Learn more about Mightier Parent](/typescript)
+[Learn more about Mightier Parent](https://www.mightier.com/parent-app/)
 
 ## Developer Experience Initiatives
 I've lead a number of initatives to help my team work better and deliver high-quality code to customers faster.
@@ -46,7 +40,7 @@ Mightier Parent originally had all of its React code written in vanilla JavaScri
 
 I lead the effort to implement TypeScript transpilation and allow for a smooth transition from JS to TS.
 
-Read more about how TypeScript helped our team
+[Read more about how TypeScript helped our team](/articles/parent-app-typescript-migration)
 
 ### Wranging serverless infrastructure using CloudFormation
 
