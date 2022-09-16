@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { useParams } from 'react-router-dom'
 // content
-import { articles, slugToMarkdownMap } from '../../siteContent'
+import { slugToMarkdownMap } from '../../siteContent'
 // UI
 import { ArticleScreenView } from './ArticleScreenView'
 
