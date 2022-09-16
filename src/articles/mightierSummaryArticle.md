@@ -3,6 +3,8 @@ As a senior full-stack engineer on a small team, I've had the opportunity to wor
 
 My team is responsible delivering web and mobile applications to customers, as well as implementing tools to empower other teams across the company.
 
+---
+
 ##  Web and Mobile Applications
 
 My team works closely with the product team to deliver applications for our customers.
@@ -30,6 +32,8 @@ We've given the product and content teams full control over what content is disp
 Ive lead architectural decisions and refactor efforts to keep the codebase easy to navigate and improve ~turnaround~ time on new features.
 
 [Learn more about Mightier Parent](https://www.mightier.com/parent-app/)
+
+---
 
 ## Developer Experience Initiatives
 I've lead a number of initatives to help my team work better and deliver high-quality code to customers faster.
