@@ -1,9 +1,6 @@
-# React Web Boilerplate
+# Alex Pereira Personal Website
 
-This boilerplate is used to create a React app using TS without
-using create-react-app
-
-## Build pipeline
+## Build Tooling
 
 - typescript - converts TS to JS
 - babel - transpiles ES6 JS to common browser JS
