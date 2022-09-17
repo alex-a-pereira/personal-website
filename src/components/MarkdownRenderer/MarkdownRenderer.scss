@@ -13,8 +13,8 @@
 
   code {
     font-family: Menlo, Monaco, "Courier New", monospace;
-    background-color: rgb(245, 245, 245);
-    border: 1px solid grey;
+    background-color: $color-purple-lighter;
+    border: 1px solid $color-purple;
     border-radius: 4px;
 
     span {

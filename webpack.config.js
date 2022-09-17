@@ -50,7 +50,10 @@ module.exports = {
             loader: 'css-loader'
           },
           {
-            loader: 'sass-loader'
+            loader: 'sass-loader',
+            options: {
+              additionalData: '@import "src/variables.scss";'
+            }
           }
         ]
       },

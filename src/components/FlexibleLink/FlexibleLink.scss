@@ -1,8 +1,8 @@
 .flexible-link {
-  color: rgb(49, 159, 199);
+  color: $color-blue;
 
   &:hover {
-    color: rebeccapurple;
+    color: $color-purple;
     cursor: pointer;
   }
 }
