@@ -25,7 +25,12 @@ $small-device-breakpoint: 800px;
   a {
     padding: 0;
     margin-left: 6px;
+    text-decoration: underline;
   }
+}
+
+.purple {
+  color: rgb(201, 147, 255);
 }
 
 .article-title {

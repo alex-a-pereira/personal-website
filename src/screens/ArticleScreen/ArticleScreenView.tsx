@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useState, useMemo } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { FaArrowLeft } from 'react-icons/fa'
 // UI components
@@ -17,6 +17,15 @@ export const ArticleScreenView = React.memo((props: ArticleScreenViewProps) => {
     navigate(-1)
   }, [navigate])
 
+  const [isBackLinkHovered, setIsBackLinkHovered] = useState(false)
+
+  const onMouseEnter = useCallback(() => { setIsBackLinkHovered(true) }, [])
+  const onMouseLeave = useCallback(() => { setIsBackLinkHovered(false) }, [])
+
+  const backLinkClassName = useMemo(() => {
+    return isBackLinkHovered ? 'purple' : ''
+  }, [isBackLinkHovered])
+
   if (!articleMarkdown) {
     return (
       <div className='article-screen-container'>
@@ -28,8 +37,15 @@ export const ArticleScreenView = React.memo((props: ArticleScreenViewProps) => {
   return (
     <div className='article-screen-container'>
       <div className='go-back-container'>
-        <FaArrowLeft />
-        <a onClick={onGoBackClick}>go back</a>
+        <FaArrowLeft className={backLinkClassName} />
+        <a
+          onClick={onGoBackClick}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          className={backLinkClassName}
+        >
+          go back
+        </a>
         <Link to='/' />
       </div>
       <MarkdownRenderer>
