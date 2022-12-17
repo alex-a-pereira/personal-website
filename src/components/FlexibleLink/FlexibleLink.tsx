@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Link as ReactRouterLink } from 'react-router-dom'
 
-import './FlexibleLink.scss'
+import './FlexibleLink.scoped.scss'
 
 // TODO: extend props for styling!
 interface FlexibleLinkProps {

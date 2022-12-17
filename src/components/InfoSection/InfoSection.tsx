@@ -2,7 +2,7 @@ import React from 'react'
 
 import { FlexibleLink } from '../FlexibleLink/FlexibleLink'
 
-import './InfoSection.scss'
+import './InfoSection.scoped.scss'
 
 interface LinkConfig {
   displayName: string

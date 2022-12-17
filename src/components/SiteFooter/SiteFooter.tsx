@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './SiteFooter.scss'
+import './SiteFooter.scoped.scss'
 
 export const SiteFooter = React.memo(() => {
   return (

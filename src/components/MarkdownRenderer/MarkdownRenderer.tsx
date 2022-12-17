@@ -10,7 +10,7 @@ import { FlexibleLink } from '../FlexibleLink/FlexibleLink'
 // types
 import type { CodeComponent, CodeProps } from 'react-markdown/lib/ast-to-react'
 
-import './MarkdownRenderer.scss'
+import './MarkdownRenderer.scoped.scss'
 
 const CodeBlock: CodeComponent = ({ node, inline, className, children, ...props }: CodeProps) => {
   const match = /language-(\w+)/.exec(className ?? '')
