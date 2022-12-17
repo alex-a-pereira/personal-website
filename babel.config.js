@@ -8,5 +8,13 @@ module.exports = {
       }
     ],
     '@babel/preset-typescript'
+  ],
+  plugins: [
+    [
+      'babel-plugin-react-scoped-css',
+      {
+        include: '.scoped.(sa|sc|c)ss$'
+      }
+    ]
   ]
 }

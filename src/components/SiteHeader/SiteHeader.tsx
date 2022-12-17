@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import type { IconType } from 'react-icons'
 
-import './SiteHeader.scss'
+import './SiteHeader.scoped.scss'
 
 interface HoverableIconProps {
   IconComponent: IconType
